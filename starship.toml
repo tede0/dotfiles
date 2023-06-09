@@ -1,0 +1,45 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory$git_branch$git_status$package$nodejs$python$line_break$character
+"""
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[package]
+format = '\[[$version](104 bold)\]'
+
+[directory]
+
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+
+[docker_context]
+format = '\[[$symbol$context]($style)\]'
+
+[git_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[golang]
+format = '\[[$symbol($version)]($style)\]'
+
+[memory_usage]
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[kubernetes]
+format = '[⛵ ($cluster in )\($namespace\)](bold green) '
+disabled = false
+
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'
