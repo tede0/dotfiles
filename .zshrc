@@ -30,12 +30,13 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin
 
 alias c='clear'
+alias e='exit'
 alias gs='git status'
 alias gp='git push'
 alias gcm='git checkout main'
 alias gc='git checkout'
 alias lg='lazygit'
-alias dot='cd ~/.config/'
+alias dot='cd ~/.config'
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
