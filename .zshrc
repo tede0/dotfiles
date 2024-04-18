@@ -9,6 +9,12 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_DISABLE_COMPFIX="true"
 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
 plugins=(git zsh-syntax-highlighting)
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -24,11 +30,6 @@ export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 export PATH="$PATH:/Users/maksymlyskov/.local/bin"
 export PATH="/usr/local/opt/jpeg/bin:$PATH"
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/opt/homebrew/bin:$PATH
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
 # Completions
 eval "$(fzf --zsh)"
