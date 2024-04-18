@@ -157,7 +157,7 @@ history = 10000
 multiplier = 3
 
 [shell]
-program = "/opt/homebrew/bin/tmux"
+program = "/usr/local/bin/tmux"
 
 [window]
 decorations = "none"
