@@ -12,6 +12,9 @@ brew install alacritty
 # Install Tmux
 brew install tmux
 
+# Install useful packages
+brew install fzf bat
+
 # Install Tpm for Tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
