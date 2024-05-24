@@ -2,7 +2,12 @@ local cmp = require "cmp"
 
 dofile(vim.g.base46_cache .. "cmp")
 
-local cmp_ui = require("core.utils").load_config().ui.cmp
+local cmp_ui = {
+  icons = true,
+  lspkind_text = true,
+  style = "default",
+}
+
 local cmp_style = cmp_ui.style
 
 local field_arrangement = {
@@ -75,10 +80,12 @@ local options = {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
+
     ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     },
+
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -87,10 +94,8 @@ local options = {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "i", "s" }),
+
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -99,10 +104,7 @@ local options = {
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "i", "s" }),
   },
   sources = {
     { name = "nvim_lsp" },
