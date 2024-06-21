@@ -18,19 +18,19 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-syntax-highlighting)
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
 source $ZSH/oh-my-zsh.sh
 
 # PATH exports
 export PATH=$PATH:$HOME/bin
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 export PATH="$PATH:/Users/maksymlyskov/.local/bin"
 export PATH="/usr/local/opt/jpeg/bin:$PATH"
+export PATH=$PATH:~/.config/scripts
 
-
+bindkey -s ^f "tmux-sessionizer.sh\n"
 # Completions
 eval "$(fzf --zsh)"
 
@@ -44,9 +44,18 @@ alias gc='git checkout'
 alias lg='lazygit'
 alias dot='cd ~/.config'
 alias ld='lazydocker'
-
-# Plugins
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias ls='lsd'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Users/admin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
