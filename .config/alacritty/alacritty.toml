@@ -163,7 +163,7 @@ program = "/usr/local/bin/tmux"
 decorations = "none"
 dynamic_padding = false
 dynamic_title = true
-opacity = 0.97
+opacity = 0.8
 
 [window.dimensions]
 columns = 160
